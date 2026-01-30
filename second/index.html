@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="glass-card">
+        <header>
+            <div>
+                <h1>Focus Pro</h1>
+                <p id="dateDisplay"></p>
+            </div>
+            <div class="stats">
+                <span id="completionRate">0%</span>
+            </div>
+        </header>
+
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Press 'Enter' to add task..." autocomplete="off">
+            <button onclick="addTask()" id="addBtn">+</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

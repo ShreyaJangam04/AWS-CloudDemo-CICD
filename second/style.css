@@ -1,0 +1,150 @@
+:root {
+    --primary: #6366f1;
+    --bg: #0f172a;
+    --card: rgba(30, 41, 59, 0.7);
+    --text: #f8fafc;
+}
+
+body {
+    background: radial-gradient(circle at top left, #1e1b4b, var(--bg));
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.glass-card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 24px;
+    width: 400px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+#dateDisplay {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin: 4px 0 0 0;
+}
+
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: var(--primary);
+    width: 0%;
+    height: 100%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-area {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#addBtn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 45px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-text {
+    flex: 1;
+    cursor: pointer;
+}
+
+li.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+.delete-btn {
+    opacity: 0;
+    color: #ef4444;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+li:hover .delete-btn {
+    opacity: 1;
+}
